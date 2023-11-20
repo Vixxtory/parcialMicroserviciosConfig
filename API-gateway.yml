@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+  cloud:
+    gateway:
+      routes:
+        - id: catalogRoute #identificador de la ruta
+          uri: http://localhost:8082 #URL donde se hará el redirect según el predicado definido
+          predicates: #Reglas de análisis del request
+            - Path=/catalog/** #path de URL de request
